@@ -16,12 +16,51 @@ const authorsJSONPath = join(currentFolderPath, "authors.json")
 
 //create endpoints
 
-//check if email exists already
-let isEmailTaken = false
+// //check if email exists already
+// let isEmailTaken = false
+
+// //check if email is taken
+// authorsRouter.post('/checkEmail', (req, res) => {
+//     //get array of authors, parse it to json
+//     const authorsArray = JSON.parse(fs.readFileSync(authorsJSONPath))
+//     //get email to check from req.body
+//     const emailToCheck = req.body.email
+
+//     authorsArray.forEach((author) => {
+//         if (author.email === emailToCheck) {
+//             isEmailTaken = true
+//         } else {
+//             isEmailTaken = false
+//         }
+//     })
+//     //send true or false response
+//     res.send(isEmailTaken)
+// })
+
+//check if email is taken
+const isEmailTaken = () => {
+    authorsRouter.post('/checkEmail', (req, res) => {
+        //get array of authors, parse it to json
+        const authorsArray = JSON.parse(fs.readFileSync(authorsJSONPath))
+        //get email to check from req.body
+        const emailToCheck = req.body.email
+
+        authorsArray.forEach((author) => {
+            if (author.email === emailToCheck) {
+                return true
+            } else {
+                return false
+            }
+        })
+
+        res.send()
+    })
+}
 
 //create new author
 authorsRouter.post('/', (req, res) => {
-    if (isEmailTaken) {
+
+    if (!isEmailTaken) {
         //create newAuthor template with server generated properties
         const newAuthor = { ...req.body, createdAt: new Date(), updatedAt: new Date(), id: uuidv4() }
         //call the array of authors from local folder and parse it to jason
@@ -85,23 +124,7 @@ authorsRouter.delete('/:authorId', (req, res) => {
     res.status(204).send()
 })
 
-//check if email is taken
-authorsRouter.post('/checkEmail', (req, res) => {
-    //get array of authors, parse it to json
-    const authorsArray = JSON.parse(fs.readFileSync(authorsJSONPath))
-    //get email to check from req.body
-    const emailToCheck = req.body.email
 
-    authorsArray.forEach((author) => {
-        if (author.email === emailToCheck) {
-            isEmailTaken = true
-        } else {
-            isEmailTaken = false
-        }
-    })
-    //send true or false response
-    res.send(isEmailTaken)
-})
 
 
 
