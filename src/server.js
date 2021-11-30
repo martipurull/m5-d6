@@ -14,7 +14,7 @@ server.use(express.json())
 server.use('/authors', authorsRouter)
 
 
-console.table(listEndpoints(server))
+// console.table(listEndpoints(server))
 
 server.listen(port, () => {
     console.log(`Server running on port: ${ port }`)
