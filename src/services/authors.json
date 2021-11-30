@@ -38,5 +38,15 @@
         "createdAt": "2021-11-30T14:31:24.740Z",
         "updatedAt": "2021-11-30T14:31:24.740Z",
         "id": "ca1dc218-25d0-49cd-bb32-83de9db815ab"
+    },
+    {
+        "name": "Martinus",
+        "surname": "Purullius",
+        "email": "mp@algoritmus.co.uk",
+        "dob": "11 May 86BCE",
+        "avatar": "https://ui-avatars.com/api/?name=Martinus+Purullius",
+        "createdAt": "2021-11-30T15:35:52.088Z",
+        "updatedAt": "2021-11-30T15:35:52.088Z",
+        "id": "bfab4971-ac6f-495b-9b00-8e19a63e01e4"
     }
 ]

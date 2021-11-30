@@ -16,18 +16,25 @@ const authorsJSONPath = join(currentFolderPath, "authors.json")
 
 //create endpoints
 
+//check if email exists already
+let isEmailTaken = false
+
 //create new author
 authorsRouter.post('/', (req, res) => {
-    //create newAuthor template with server generated properties
-    const newAuthor = { ...req.body, createdAt: new Date(), updatedAt: new Date(), id: uuidv4() }
-    //call the array of authors from local folder and parse it to jason
-    const authors = JSON.parse(fs.readFileSync(authorsJSONPath))
-    //add newAuthor object to authors array
-    authors.push(newAuthor)
-    //write the new array into the saved file (including newAuthor on top of all previous authors)
-    fs.writeFileSync(authorsJSONPath, JSON.stringify(authors))
-    //send back the id of the newly created author plus the success status code (201 for data creation)
-    res.status(201).send(`new author created with id ${ newAuthor.id } on ${ newAuthor.createdAt }`)
+    if (isEmailTaken) {
+        //create newAuthor template with server generated properties
+        const newAuthor = { ...req.body, createdAt: new Date(), updatedAt: new Date(), id: uuidv4() }
+        //call the array of authors from local folder and parse it to jason
+        const authors = JSON.parse(fs.readFileSync(authorsJSONPath))
+        //add newAuthor object to authors array
+        authors.push(newAuthor)
+        //write the new array into the saved file (including newAuthor on top of all previous authors)
+        fs.writeFileSync(authorsJSONPath, JSON.stringify(authors))
+        //send back the id of the newly created author plus the success status code (201 for data creation)
+        res.status(201).send(`new author created with id ${ newAuthor.id } on ${ newAuthor.createdAt }`)
+    } else {
+        res.status(409).send(`Your request could not be processed: ${ req.body.email } is already in use by another author.`)
+    }
 })
 
 //read array of authors
@@ -78,6 +85,23 @@ authorsRouter.delete('/:authorId', (req, res) => {
     res.status(204).send()
 })
 
+//check if email is taken
+authorsRouter.post('/checkEmail', (req, res) => {
+    //get array of authors, parse it to json
+    const authorsArray = JSON.parse(fs.readFileSync(authorsJSONPath))
+    //get email to check from req.body
+    const emailToCheck = req.body.email
+
+    authorsArray.forEach((author) => {
+        if (author.email === emailToCheck) {
+            isEmailTaken = true
+        } else {
+            isEmailTaken = false
+        }
+    })
+    //send true or false response
+    res.send(isEmailTaken)
+})
 
 
 
