@@ -7,6 +7,8 @@ import { validationResult } from 'express-validator'
 import { blogPostsValidation } from './blogPostValidation.js'
 import createHttpError from 'http-errors'
 
+
+
 const blogPostsRouter = express.Router()
 
 const blogPostsJSONPath = join(dirname(fileURLToPath(import.meta.url)), "blogPosts.json")
