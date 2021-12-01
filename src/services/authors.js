@@ -67,7 +67,7 @@ authorsRouter.put('/:authorId', (req, res) => {
     //find the index of the author whose details we want to edit
     const authorIndex = authorsArray.findIndex(a => a.id === req.params.authorId)
     //edit the author details overwriting the details provided in the req.body
-    const editedAuthor = { ...authorsArray[authorIndex], ...req.body }
+    const editedAuthor = { ...authorsArray[authorIndex], ...req.body, updatedAt: new Date() }
     //replace author we wanted to edit with the newly edited author 
     authorsArray[authorIndex] = editedAuthor
     //save the new array with the replaced author in the file
