@@ -26,7 +26,7 @@ authorsRouter.post('/', (req, res) => {
     }
     if (!checkEmail()) {
         //create newAuthor template with server generated properties
-        const newAuthor = { ...req.body, createdAt: new Date(), updatedAt: new Date(), id: uuidv4() }
+        const newAuthor = { ...req.body, createdAt: new Date(), id: uuidv4() }
         //call the array of authors from local folder and parse it to jason
         const authors = JSON.parse(fs.readFileSync(authorsJSONPath))
         //add newAuthor object to authors array

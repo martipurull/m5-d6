@@ -1,6 +1,7 @@
 import express from 'express'
 import listEndpoints from 'express-list-endpoints'
 import authorsRouter from './services/authors.js'
+import blogPostsRouter from './data/blogPosts.js'
 import cors from 'cors'
 
 const server = express()
@@ -13,9 +14,10 @@ server.use(express.json())
 //endpoints follow
 
 server.use('/authors', authorsRouter)
+server.use('/blogPosts', blogPostsRouter)
 
 
-// console.table(listEndpoints(server))
+console.table(listEndpoints(server))
 
 server.listen(port, () => {
     console.log(`Server running on port: ${ port }`)
