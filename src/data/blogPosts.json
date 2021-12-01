@@ -70,5 +70,53 @@
     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "id": "c3936847-fc22-4066-bac5-ed771ddd9c9f",
     "createdAt": "2021-12-01T15:57:41.870Z"
+  },
+  {
+    "title": "The man who killed a watermelon with a sharp spaghetto",
+    "category": "True crime",
+    "author": "Lurap Litmur",
+    "content": "Spaghetti is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum wheat semolina.\n\nWho would have thought they could be deadly?",
+    "id": "fbd4a47e-a011-406d-87af-05c0e5ff9ae7",
+    "createdAt": "2021-12-01T16:23:57.419Z",
+    "readTime": {
+      "value": 1.304,
+      "unit": "minutes"
+    }
+  },
+  {
+    "title": "The rogue onion on a murder spree",
+    "category": "True crime",
+    "author": "Lurap Litmur",
+    "content": "Because the wild onion is extinct and ancient records of using onions span western and eastern Asia, the geographic origin of the onion is uncertain,[17][18] although domestication likely took place in Southwest or Central Asia.[3]: 20-21 [19] Onions have been variously described as having originated in Iran, western Pakistan and Central Asia.[17][19]: 1 [18][20]\n\nTraces of onions recovered from Bronze Age settlements in China suggest that onions were used as far back as 5000 BC, not only for their flavour, but the bulb's durability in storage and transport.[21][19][failed verification] Ancient Egyptians revered the onion bulb, viewing its spherical shape and concentric rings as symbols of eternal life.[19] Onions were used in Egyptian burials, as evidenced by onion traces found in the eye sockets of Ramesses IV.[22]\n\nPliny the Elder of the first century AD wrote about the use of onions and cabbage in Pompeii. He documented Roman beliefs about the onion's ability to improve ocular ailments, aid in sleep, and heal everything from oral sores and toothaches to dog bites, lumbago, and even dysentery. Archaeologists unearthing Pompeii long after its 79 AD volcanic burial have found gardens resembling those in Pliny's detailed narratives.[19] According to texts collected in the fifth/sixth century AD under the authorial aegis of \"Apicius\" (said to have been a gourmet), onions were used in many Roman recipes.[19]\n\nIn the Age of Discovery, onions were taken to North America by the first European settlers,[17] only to discover the plant readily available, and in wide use in Native American gastronomy.[17] According to diaries kept by certain first English colonists, the bulb onion was one of the first crops planted by the Pilgrim fathers.[19]\n\nDid the onion have any spring?",
+    "id": "d0f6bc71-638f-40bc-8274-71005a90ccfe",
+    "createdAt": "2021-12-01T16:25:47.119Z",
+    "readTime": {
+      "value": 7,
+      "unit": "minutes"
+    }
+  },
+  {
+    "title": "The tomato that squashed itself to death",
+    "category": "True crime",
+    "author": "Lurap Litmur",
+    "content": "<p>It was the cherry on top</p>",
+    "id": "e374e709-c703-4c20-b7a3-00de72f03c83",
+    "createdAt": "2021-12-01T17:05:12.663Z",
+    "readTime": {
+      "value": 0,
+      "unit": "minutes"
+    }
+  },
+  {
+    "title": "The strange case of Dr Cherry and Mr Lime",
+    "category": "",
+    "author": "Lurap Litmur",
+    "content": "<p>Nothing is what it seems in the pantry.</p>",
+    "id": "95d92299-03d3-4af9-84ae-99af1bd71593",
+    "createdAt": "2021-12-01T17:12:18.475Z",
+    "readTime": {
+      "value": 1,
+      "unit": "minute"
+    }
   }
 ]

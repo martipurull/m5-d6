@@ -9,7 +9,9 @@ export default class NewBlogPost extends Component {
     this.state = {
       title: "",
       category: "",
-      author: "",
+      author: {
+        name: "",
+      },
       content: ""
     };
     this.handleChange = this.handleChange.bind(this);
@@ -44,7 +46,7 @@ export default class NewBlogPost extends Component {
         <Form className="mt-5">
           <Form.Group controlId="blog-form" className="mt-3">
             <Form.Label>Author</Form.Label>
-            <Form.Control size="lg" placeholder="Author's name" value={this.state.author} onChange={(e) => this.handleChange("author", e.target.value)} />
+            <Form.Control size="lg" placeholder="Author's name" value={this.state.author.name} onChange={(e) => this.handleChange("author", e.target.value)} />
           </Form.Group>
           <Form.Group controlId="blog-form" className="mt-3">
             <Form.Label>Title</Form.Label>
@@ -62,11 +64,9 @@ export default class NewBlogPost extends Component {
           </Form.Group>
           <Form.Group controlId="blog-content" className="mt-3">
             <Form.Label>Blog Content</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={10}
+            <ReactQuill
               value={this.state.content}
-              onChange={(e) => this.handleChange("content", e.target.value)}
+              onChange={(html) => this.handleChange("content", html)}
               className="new-blog-content"
             />
           </Form.Group>
