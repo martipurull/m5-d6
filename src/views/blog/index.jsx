@@ -3,7 +3,7 @@ import { Container, Image } from "react-bootstrap";
 import { withRouter } from "react-router";
 import BlogAuthor from "../../components/blog/blog-author";
 import BlogLike from "../../components/likes/BlogLike";
-import posts from "../../data/posts.json";
+import posts from "../../data/blogPosts.json";
 import "./styles.css";
 class Blog extends Component {
   state = {
@@ -38,9 +38,9 @@ class Blog extends Component {
               </div>
               <div className="blog-details-info">
                 <div>{blog.createdAt}</div>
-                <div>{`${blog.readTime.value} ${blog.readTime.unit} read`}</div>
-                <div style={{marginTop:20}}>
-                  <BlogLike defaultLikes={["123"]} onChange={console.log}/>
+                <div>{`${ blog.readTime.value } ${ blog.readTime.unit } read`}</div>
+                <div style={{ marginTop: 20 }}>
+                  <BlogLike defaultLikes={["123"]} onChange={console.log} />
                 </div>
               </div>
             </div>
