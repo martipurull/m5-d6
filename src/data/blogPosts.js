@@ -20,7 +20,7 @@ blogPostsRouter.post('/', blogPostsValidation, (req, res, next) => {
             next(createHttpError(400, "There some errors on your submission, namely: ", { errorList }))
         } else {
             const blogPostsArray = getBlogPosts()
-            const newPost = { ...req.body, id: uuidv4(), createdAt: new Date(), readTime: { value: req.body.content.length() / 250, unit: "minute" } }
+            const newPost = { ...req.body, id: uuidv4(), createdAt: new Date() }
             blogPostsArray.push(newPost)
             postBlogPost(blogPostsArray)
             res.status(201).send({ id: newPost.id })

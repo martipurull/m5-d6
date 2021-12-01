@@ -1,17 +1,41 @@
 import React, { Component } from "react";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Text } from "react-bootstrap";
 import "./styles.css";
 export default class NewBlogPost extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = {
+      title: "",
+      category: "",
+      author: "",
+      content: ""
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(value) {
-    this.setState({ text: value });
+  handleChange(fieldKey, value) {
+    this.setState({
+      ...this.state,
+      [fieldKey]: value
+    });
+  }
+
+  async handleSubmit() {
+    try {
+      const response = await fetch('http://localhost:3001/blogPosts', {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST",
+        body: JSON.stringify(this.state)
+      })
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -19,24 +43,30 @@ export default class NewBlogPost extends Component {
       <Container className="new-blog-container">
         <Form className="mt-5">
           <Form.Group controlId="blog-form" className="mt-3">
+            <Form.Label>Author</Form.Label>
+            <Form.Control size="lg" placeholder="Author's name" value={this.state.author} onChange={(e) => this.handleChange("author", e.target.value)} />
+          </Form.Group>
+          <Form.Group controlId="blog-form" className="mt-3">
             <Form.Label>Title</Form.Label>
-            <Form.Control size="lg" placeholder="Title" />
+            <Form.Control size="lg" placeholder="Title" value={this.state.title} onChange={(e) => this.handleChange("title", e.target.value)} />
           </Form.Group>
           <Form.Group controlId="blog-category" className="mt-3">
             <Form.Label>Category</Form.Label>
-            <Form.Control size="lg" as="select">
-              <option>Category1</option>
-              <option>Category2</option>
-              <option>Category3</option>
-              <option>Category4</option>
-              <option>Category5</option>
+            <Form.Control size="lg" as="select" value={this.state.category} onChange={(e) => this.handleChange("category", e.target.value)}>
+              <option>Life</option>
+              <option>Self-development</option>
+              <option>Tech</option>
+              <option>Blockchain</option>
+              <option>True crime</option>
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="blog-content" className="mt-3">
             <Form.Label>Blog Content</Form.Label>
-            <ReactQuill
-              value={this.state.text}
-              onChange={this.handleChange}
+            <Form.Control
+              as="textarea"
+              rows={10}
+              value={this.state.content}
+              onChange={(e) => this.handleChange("content", e.target.value)}
               className="new-blog-content"
             />
           </Form.Group>
@@ -45,7 +75,7 @@ export default class NewBlogPost extends Component {
               Reset
             </Button>
             <Button
-              type="submit"
+              onClick={this.handleSubmit}
               size="lg"
               variant="dark"
               style={{ marginLeft: "1em" }}
