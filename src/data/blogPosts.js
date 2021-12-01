@@ -6,6 +6,7 @@ import { dirname, join } from 'path'
 import { validationResult } from 'express-validator'
 import { blogPostsValidation } from './blogPostValidation.js'
 import createHttpError from 'http-errors'
+import striptags from 'striptags'
 
 
 
@@ -22,7 +23,8 @@ blogPostsRouter.post('/', blogPostsValidation, (req, res, next) => {
             next(createHttpError(400, "There some errors on your submission, namely: ", { errorList }))
         } else {
             const blogPostsArray = getBlogPosts()
-            const newPostReadTime = Math.ceil(req.body.content.length / 250)
+            const strippedPostContent = striptags(req.body.content)
+            const newPostReadTime = Math.ceil(strippedPostContent.split(' ').length / 250)
             const newPost = { ...req.body, id: uuidv4(), createdAt: new Date(), readTime: { value: newPostReadTime, unit: newPostReadTime > 1 ? "minutes" : "minute" } }
             blogPostsArray.push(newPost)
             postBlogPost(blogPostsArray)
