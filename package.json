@@ -21,11 +21,15 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
+  "devDependencies": {
+    "nodemon": "2.0.12"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon -e js ./src/server.js"
   },
   "eslintConfig": {
     "extends": [
