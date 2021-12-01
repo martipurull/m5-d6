@@ -7,6 +7,7 @@ const server = express()
 
 const port = 3001
 
+server.use(cors()) //we need this to connect front end with back end --> more on this next week
 server.use(express.json())
 
 //endpoints follow
