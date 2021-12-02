@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import createHttpError from 'http-errors'
 import { getBlogPosts, postBlogPost } from '../library/fs-tools.js'
 
-const blogCommentsRouter = express.Router()
+const blogCommentsRouter = express.Router({ mergeParams: true })
 
 //endpoints
 blogCommentsRouter.post('/', async (req, res, next) => {
