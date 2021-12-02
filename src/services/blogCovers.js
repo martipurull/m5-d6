@@ -1,7 +1,7 @@
 import express from 'express'
 import multer from 'multer'
 import createHttpError from 'http-errors'
-import { saveBlogCover, getBlogPosts } from '../library/fs-tools.js'
+import { saveBlogCover, getBlogPosts, postBlogPost } from '../library/fs-tools.js'
 
 const blogCoversRouter = express.Router({ mergeParams: true })
 
@@ -19,10 +19,15 @@ const coverUploader = multer({
 
 blogCoversRouter.post('/', coverUploader, async (req, res, next) => {
     try {
+        console.log(req.file)
         const blogPosts = await getBlogPosts()
         const currentBlogPost = blogPosts.find(post => post.id === req.params.postId)
-        console.log("Req params", req.params)
-        await saveBlogCover(`${ req.params.postId }.${ req.file.mimetype.slice(6) }`, req.file.buffer)
+        console.log(currentBlogPost)
+        const fileName = `${ req.params.postId }.${ req.file.mimetype.slice(6) }`
+        await saveBlogCover(fileName, req.file.buffer)
+        currentBlogPost.cover = `http://localhost:3001/blog-covers/${ fileName }`
+        blogPosts.push(currentBlogPost)
+        postBlogPost(blogPosts)
         res.send("Image uploaded")
     } catch (error) {
         next(error)

@@ -105,7 +105,8 @@
     "readTime": {
       "value": 0,
       "unit": "minutes"
-    }
+    },
+    "cover": "http://localhost:3001/public/blog-covers/e374e709-c703-4c20-b7a3-00de72f03c83.jpeg"
   },
   {
     "title": "The strange case of Dr Cherry and Mr Lime",
@@ -166,5 +167,18 @@
       "value": 5,
       "unit": "minutes"
     }
+  },
+  {
+    "title": "The tomato that squashed itself to death",
+    "category": "True crime",
+    "author": "Lurap Litmur",
+    "content": "<p>It was the cherry on top</p>",
+    "id": "e374e709-c703-4c20-b7a3-00de72f03c83",
+    "createdAt": "2021-12-01T17:05:12.663Z",
+    "readTime": {
+      "value": 0,
+      "unit": "minutes"
+    },
+    "cover": "http://localhost:3001/blog-covers/e374e709-c703-4c20-b7a3-00de72f03c83.jpeg"
   }
 ]

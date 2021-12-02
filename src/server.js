@@ -6,12 +6,15 @@ import blogCommentsRouter from './services/blogComments.js'
 import blogCoversRouter from './services/blogCovers.js'
 import cors from 'cors'
 import { badRequestHandler, unauthorisedHandler, notFoundHandler, genericErrorHandler } from './errorHandlers.js'
+import { join } from 'path'
 
 const server = express()
 
 const port = 3001
 
+const publicFolderPath = join(process.cwd(), "./public")
 //middleware
+server.use(express.static(publicFolderPath))
 server.use(cors()) //we need this to connect front end with back end --> more on this next week
 server.use(express.json())
 
