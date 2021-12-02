@@ -1,7 +1,7 @@
 import express from 'express'
 import listEndpoints from 'express-list-endpoints'
 import authorsRouter from './services/authors.js'
-import blogPostsRouter from './data/blogPosts.js'
+import blogPostsRouter from './services/blogPosts.js'
 import cors from 'cors'
 import { badRequestHandler, unauthorisedHandler, notFoundHandler, genericErrorHandler } from './errorHandlers.js'
 
