@@ -4,6 +4,7 @@ import authorsRouter from './services/authors.js'
 import blogPostsRouter from './services/blogPosts.js'
 import blogCommentsRouter from './services/blogComments.js'
 import blogCoversRouter from './services/blogCovers.js'
+import authorAvatarsRouter from './services/authorAvatars.js'
 import cors from 'cors'
 import { badRequestHandler, unauthorisedHandler, notFoundHandler, genericErrorHandler } from './errorHandlers.js'
 import { join } from 'path'
@@ -23,6 +24,7 @@ server.use('/authors', authorsRouter)
 server.use('/blogPosts', blogPostsRouter)
 server.use('/blogPosts/:postId/comments', blogCommentsRouter)
 server.use('/blogPosts/:postId/uploadCover', blogCoversRouter)
+server.use('/authors/:authorId/uploadAvatar', authorAvatarsRouter)
 
 //error handlers
 server.use(badRequestHandler)
