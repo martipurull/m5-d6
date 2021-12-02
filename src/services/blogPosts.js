@@ -20,7 +20,7 @@ blogPostsRouter.post('/', blogPostsValidation, async (req, res, next) => {
             const newPostReadTime = Math.ceil(strippedPostContent.split(' ').length / 250)
             const newPost = { ...req.body, id: uuidv4(), createdAt: new Date(), readTime: { value: newPostReadTime, unit: newPostReadTime > 1 ? "minutes" : "minute" } }
             blogPostsArray.push(newPost)
-            postBlogPost(blogPostsArray)
+            await postBlogPost(blogPostsArray)
             res.status(201).send({ id: newPost.id })
         }
     } catch (error) {
