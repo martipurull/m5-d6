@@ -19,7 +19,7 @@ const coverUploader = multer({
 
 blogCoversRouter.post('/', coverUploader, async (req, res, next) => {
     try {
-        console.log(req.file)
+        console.log(req.params)
         const blogPosts = await getBlogPosts()
         const currentBlogPost = blogPosts.find(post => post.id === req.params.postId)
         console.log(currentBlogPost)

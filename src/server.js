@@ -21,10 +21,10 @@ server.use(express.json())
 
 //endpoints
 server.use('/authors', authorsRouter)
+server.use('/authors/:authorId/uploadAvatar', authorAvatarsRouter)
 server.use('/blogPosts', blogPostsRouter)
 server.use('/blogPosts/:postId/comments', blogCommentsRouter)
 server.use('/blogPosts/:postId/uploadCover', blogCoversRouter)
-server.use('/authors/:authorId/uploadAvatar', authorAvatarsRouter)
 
 //error handlers
 server.use(badRequestHandler)

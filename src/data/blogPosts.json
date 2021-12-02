@@ -81,7 +81,8 @@
     "readTime": {
       "value": 1.304,
       "unit": "minutes"
-    }
+    },
+    "cover": "http://localhost:3001/blog-covers/fbd4a47e-a011-406d-87af-05c0e5ff9ae7.jpeg"
   },
   {
     "title": "The rogue onion on a murder spree",
@@ -118,7 +119,8 @@
     "readTime": {
       "value": 1,
       "unit": "minute"
-    }
+    },
+    "cover": "http://localhost:3001/blog-covers/95d92299-03d3-4af9-84ae-99af1bd71593.jpeg"
   },
   {
     "title": "The sign of the Pineapple",
@@ -180,5 +182,31 @@
       "unit": "minutes"
     },
     "cover": "http://localhost:3001/blog-covers/e374e709-c703-4c20-b7a3-00de72f03c83.jpeg"
+  },
+  {
+    "title": "The man who killed a watermelon with a sharp spaghetto",
+    "category": "True crime",
+    "author": "Lurap Litmur",
+    "content": "Spaghetti is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum wheat semolina.\n\nWho would have thought they could be deadly?",
+    "id": "fbd4a47e-a011-406d-87af-05c0e5ff9ae7",
+    "createdAt": "2021-12-01T16:23:57.419Z",
+    "readTime": {
+      "value": 1.304,
+      "unit": "minutes"
+    },
+    "cover": "http://localhost:3001/blog-covers/fbd4a47e-a011-406d-87af-05c0e5ff9ae7.jpeg"
+  },
+  {
+    "title": "The strange case of Dr Cherry and Mr Lime",
+    "category": "",
+    "author": "Lurap Litmur",
+    "content": "<p>Nothing is what it seems in the pantry.</p>",
+    "id": "95d92299-03d3-4af9-84ae-99af1bd71593",
+    "createdAt": "2021-12-01T17:12:18.475Z",
+    "readTime": {
+      "value": 1,
+      "unit": "minute"
+    },
+    "cover": "http://localhost:3001/blog-covers/95d92299-03d3-4af9-84ae-99af1bd71593.jpeg"
   }
 ]

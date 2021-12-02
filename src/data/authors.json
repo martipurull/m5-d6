@@ -44,7 +44,7 @@
         "surname": "Purullius",
         "email": "mp@algoritmus.co.uk",
         "dob": "11 May 86BCE",
-        "avatar": "https://ui-avatars.com/api/?name=Martinus+Purullius",
+        "avatar": "http://localhost:3001/author-avatars/bfab4971-ac6f-495b-9b00-8e19a63e01e4.png",
         "createdAt": "2021-11-30T15:35:52.088Z",
         "updatedAt": "2021-11-30T15:35:52.088Z",
         "id": "bfab4971-ac6f-495b-9b00-8e19a63e01e4"
@@ -88,5 +88,15 @@
         "createdAt": "2021-11-30T16:52:50.170Z",
         "updatedAt": "2021-11-30T16:52:50.170Z",
         "id": "9b1617e8-0541-479e-ba5d-c19d47e207f5"
+    },
+    {
+        "name": "Martinus",
+        "surname": "Purullius",
+        "email": "mp@algoritmus.co.uk",
+        "dob": "11 May 86BCE",
+        "avatar": "http://localhost:3001/author-avatars/bfab4971-ac6f-495b-9b00-8e19a63e01e4.png",
+        "createdAt": "2021-11-30T15:35:52.088Z",
+        "updatedAt": "2021-11-30T15:35:52.088Z",
+        "id": "bfab4971-ac6f-495b-9b00-8e19a63e01e4"
     }
 ]
