@@ -17,7 +17,8 @@ blogCommentsRouter.post('/', async (req, res, next) => {
             currentBlogPost.comments = []
             currentBlogPost.comments.push(newComment)
         }
-        await postBlogPost(currentBlogPost)
+        blogPosts.push(currentBlogPost)
+        await postBlogPost(blogPosts)
         res.status(201).send(`Comment added successfully to blog post with id ${ req.params.postId }`)
     } catch (error) {
         next(error)
