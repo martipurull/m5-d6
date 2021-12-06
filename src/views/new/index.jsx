@@ -27,7 +27,7 @@ export default class NewBlogPost extends Component {
 
   async handleSubmit() {
     try {
-      const response = await fetch(`${ process.env.FE_REMOTE_URL }/blogPosts`, {
+      const response = await fetch(`${ process.env.REACT_APP_HEROKU }/blogPosts`, {
         headers: {
           "Content-Type": "application/json"
         },
