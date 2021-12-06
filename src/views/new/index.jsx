@@ -27,7 +27,7 @@ export default class NewBlogPost extends Component {
 
   async handleSubmit() {
     try {
-      const response = await fetch('http://localhost:3001/blogPosts', {
+      const response = await fetch(`${ process.env.FE_REMOTE_URL }/blogPosts`, {
         headers: {
           "Content-Type": "application/json"
         },
