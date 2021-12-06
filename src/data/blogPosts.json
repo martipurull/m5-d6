@@ -1,21 +1,73 @@
-{
-    "title": "The strange case of Dr Cherry and Mr Lime",
-    "category": "",
-    "author": "Lurap Litmur",
-    "content": "<p>Nothing is what it seems in the pantry.</p>",
-    "id": "95d92299-03d3-4af9-84ae-99af1bd71593",
-    "createdAt": "2021-12-01T17:12:18.475Z",
-    "readTime": {
-        "value": 1,
-        "unit": "minute"
+[
+    {
+        "title": "The strange case of Dr Cherry and Mr Lime",
+        "category": "",
+        "author": "Lurap Litmur",
+        "content": "<p>Nothing is what it seems in the pantry.</p>",
+        "id": "95d92299-03d3-4af9-84ae-99af1bd71593",
+        "createdAt": "2021-12-01T17:12:18.475Z",
+        "readTime": {
+            "value": 1,
+            "unit": "minute"
+        },
+        "cover": "http://localhost:3001/blog-covers/95d92299-03d3-4af9-84ae-99af1bd71593.jpeg",
+        "comments": [
+            {
+                "user": "Tony",
+                "text": "This is a very interesting post... I wish I had read it.",
+                "createdAt": "2021-12-02T22:11:15.905Z",
+                "id": "7d251fa7-3ff9-4a07-b23c-858ac76b84b3"
+            }
+        ]
     },
-    "cover": "http://localhost:3001/blog-covers/95d92299-03d3-4af9-84ae-99af1bd71593.jpeg",
-    "comments": [
-        {
-            "user": "Tony",
-            "text": "This is a very interesting post... I wish I had read it.",
-            "createdAt": "2021-12-02T22:11:15.905Z",
-            "id": "7d251fa7-3ff9-4a07-b23c-858ac76b84b3"
+    {
+        "title": "A random blog post you should never check out",
+        "category": "True Crime",
+        "author": "Lurap Litmur",
+        "content": "<p>It is so interesting it might kill you dead.</p>",
+        "id": "e6f88015-409c-4e46-a0a5-626ea020d4df",
+        "createdAt": "2021-12-06T13:45:31.483Z",
+        "readTime": {
+            "value": 1,
+            "unit": "minute"
         }
-    ]
-}
+    },
+    {
+        "title": "Another random post",
+        "category": "True Crime",
+        "author": "Lurap Litmur",
+        "content": "<p>Have you heard about flying potatoes? They are not what you may think... they are not innocuous either, but rather nefarious, if you ask me. Oh, you didn't ask me? I am so sorry. Beware of the flying potatoes in any case, son.</p>",
+        "id": "cfbfd7de-9a2f-4921-b7eb-a41e5362d1f2",
+        "createdAt": "2021-12-06T13:46:44.550Z",
+        "readTime": {
+            "value": 1,
+            "unit": "minute"
+        },
+        "comments": [
+            {
+                "user": "David",
+                "text": "You talk nonsense, man, you just wasted my time... I HATE YOU!!!!",
+                "createdAt": "2021-12-06T13:49:11.125Z",
+                "id": "fa0046e3-6db7-4248-9723-39b8a39eb0e1"
+            },
+            {
+                "user": "Sting",
+                "text": "You should set your potatoes free. There's no point watching every peel they shed.",
+                "createdAt": "2021-12-06T13:50:00.667Z",
+                "id": "c3e3bb9b-fa8d-4647-bbcb-1c2f49adeaef"
+            }
+        ]
+    },
+    {
+        "title": "Letucce Go Now",
+        "category": "Life",
+        "author": "Lurap Litmur",
+        "content": "<p>You know you're onto something when you find a salad that is both healthy and tasty... Lettuce Go Now is the first salad-only fast food service for all the healthy eaters out there.</p>",
+        "id": "058ec3a2-7323-4e1e-9b75-73658f489a9c",
+        "createdAt": "2021-12-06T13:48:21.339Z",
+        "readTime": {
+            "value": 1,
+            "unit": "minute"
+        }
+    }
+]

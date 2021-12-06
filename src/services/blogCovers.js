@@ -23,7 +23,7 @@ blogCoversRouter.post('/', coverUploader, async (req, res, next) => {
         const blogPosts = await getBlogPosts()
         const currentBlogPost = blogPosts.find(post => post.id === req.params.postId)
         console.log(currentBlogPost)
-        const fileName = `${ req.params.postId }.${ req.file.mimetype.slice(6) }`
+        const fileName = `${ req.params.postId }.${ path.extname(req.file.originalname) }`
         await saveBlogCover(fileName, req.file.buffer)
         currentBlogPost.cover = `http://localhost:3001/blog-covers/${ fileName }`
         blogPosts.push(currentBlogPost)

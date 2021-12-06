@@ -23,7 +23,7 @@ authorAvatarsRouter.post('/', avatarUploader, async (req, res, next) => {
     try {
         const authors = await getAuthors()
         const currentAuthor = authors.find(author => author.id === req.params.authorId)
-        const fileName = `${ req.params.authorId }.${ req.file.mimetype.split(path.sep)[1] }`
+        const fileName = `${ req.params.authorId }.${ path.extname(req.file.originalname) }`
         console.log("FILE NAME: ", fileName)
         await saveAuthorAvatar(fileName, req.file.buffer)
         currentAuthor.avatar = `http://localhost:3001/author-avatars/${ fileName }`

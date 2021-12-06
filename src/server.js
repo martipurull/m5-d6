@@ -11,12 +11,25 @@ import { join } from 'path'
 
 const server = express()
 
-const port = 3001
+const port = process.env.PORT
 
-const publicFolderPath = join(process.cwd(), "./public")
 //middleware
+const publicFolderPath = join(process.cwd(), "./public")
 server.use(express.static(publicFolderPath))
-server.use(cors()) //we need this to connect front end with back end --> more on this next week
+
+const whitelist = [process.env.FE_LOCAL_URL, process.env.FE_REMOTE_URL]
+const corsOptions = {
+    origin: function (origin, next) {
+        console.log("CORS ORIGIN: ", origin)
+        if (!origin || whitelist.indexOf(origin !== -1)) {
+            next(null, true)
+        } else {
+            next(new Error("CORS ERROR!"))
+        }
+    }
+}
+
+server.use(cors(corsOptions))
 server.use(express.json())
 
 //endpoints
@@ -35,5 +48,5 @@ server.use(genericErrorHandler)
 console.table(listEndpoints(server))
 
 server.listen(port, () => {
-    console.log(`Server running on port: ${ port }`)
+    console.log(`Server running on port ${ port }`)
 })
