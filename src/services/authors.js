@@ -1,6 +1,6 @@
 import express from 'express'
 import { v4 as uuidv4 } from 'uuid'
-import { getAuthors, createAuthors } from '../library/fs-tools.js'
+import { getAuthors, createAuthors, getBlogPosts } from '../library/fs-tools.js'
 import createHttpError from 'http-errors'
 
 const authorsRouter = express.Router()
@@ -46,6 +46,22 @@ authorsRouter.get('/:authorId', async (req, res, next) => {
             res.send(authorFound)
         } else {
             next(createHttpError(404, `${ authorFound.name } ${ authorFound.surname } with id ${ authorFound.id } does not exist in the database.`))
+        }
+    } catch (error) {
+        next(error)
+    }
+})
+
+authorsRouter.get('/:authorId/blogPosts', async (req, res, next) => {
+    try {
+        const authors = await getAuthors()
+        const selectedAuthor = authors.find(author => author.id === req.params.authorId)
+        const blogPosts = await getBlogPosts()
+        const filteredBlogPosts = blogPosts.filter(blogPost => blogPost.author === `${ selectedAuthor.name } ${ selectedAuthor.surname }`)
+        if (filteredBlogPosts) {
+            res.send(filteredBlogPosts)
+        } else {
+            next(createHttpError(404, `${ selectedAuthor } doesn't seem to have any blog posts to their name.`))
         }
     } catch (error) {
         next(error)
