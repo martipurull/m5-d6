@@ -40,7 +40,7 @@ authorAvatarsRouter.post('/', avatarUploader, async (req, res, next) => {
         currentAuthor.avatar = `https://res.cloudinary.com/dpyfjvq8s/image/upload/v1638806215/strive-blog/${ fileName }`
         authors.push(currentAuthor)
         await createAuthors(authors)
-        res.send("New avatar image uploaded.")
+        res.send("New avatar image uploaded with url: ", currentAuthor.avatar)
     } catch (error) {
         next(error)
     }
